@@ -1,0 +1,44 @@
+name: "build"
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3.0.2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+      - name: Run docker
+        run: |
+          pip install -r requirements.txt
+          chmod +x *.sh
+          ./init.sh
+          ./build.sh
+          ./download.sh
+          ./start.sh
+          sudo chmod 777 datasets/*.DMP
+      - uses: actions/upload-artifact@v3
+        with:
+          name: datasets
+          path: |
+            datasets/*.DMP
+            datasets/*.dmp
+  release:
+    needs:
+      - build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+      - uses: actions/download-artifact@v3
+        with:
+          name: datasets
+      - name: Release
+        run: |
+          ls -las
+          npm install
+          npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
