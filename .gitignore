@@ -1,14 +1,6 @@
-dataset.csv
-dataset2.csv
-population_iris.csv
-dataset.zip
-dataset.7z
+libs/
 generated/*.csv
-postgres_credentials.txt
-oracle_credentials.txt
-postgres_credentials.txt.old
-oracle_credentials.txt.old
-*credentials*
+.env
 
 # Created by https://www.toptal.com/developers/gitignore/api/microsoftoffice,linux,macos,python,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=microsoftoffice,linux,macos,python,jupyternotebooks
