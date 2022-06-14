@@ -9,7 +9,6 @@ then
     echo "The virtual environment already exists" 
 else
     echo "Creating the virtual environment" 
-    cd src/main/python
     python -m venv venv
     if [ -d "venv/bin" ]
     then
