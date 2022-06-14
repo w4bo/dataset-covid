@@ -1,10 +1,14 @@
+#!/bin/bash
+set -e
+set -xo
+
 echo "Replacing .env.example with .env"
 cp .env.example .env
 
 P=$(pwd)
 echo $P
 
-if [ -d "src/main/python/venv" ] 
+if [ -d "venv" ] 
 then
     echo "The virtual environment already exists" 
 else
@@ -22,3 +26,4 @@ else
 fi
 
 sed -i "s+\!HOME\!+${P}+g" .env
+echo "Done."
