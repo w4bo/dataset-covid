@@ -30,10 +30,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.2
-      - uses: actions/upload-artifact@v3
+      - uses: actions/download-artifact@v3
         with:
           name: datasets
-          path: datasets/*.DMP
       - name: Release
         run: |
           ls -las datasets
