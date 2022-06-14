@@ -17,6 +17,10 @@ jobs:
           ./build.sh
           ./download.sh
           ./start.sh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: datasets
+          path: datasets/*.DMP
   release:
     needs:
       - build
@@ -25,6 +29,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.2
+      - uses: actions/upload-artifact@v3
+        with:
+          name: datasets
+          path: datasets/*.DMP
       - name: Release
         run: |
           ls -las datasets

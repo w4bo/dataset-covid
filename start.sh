@@ -29,5 +29,7 @@ touch datasets/.pythonready
 
 until [ -f datasets/COVID_WEEKLY.DMP ]
 do
-     sleep 1
+  sleep 1
 done
+
+ls -las datasets
