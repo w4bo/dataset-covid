@@ -21,7 +21,6 @@ else
     fi
     pip install -r requirements.txt
     chmod -R 777 .
-    cd -
 fi
 
 sed -i "s+\!HOME\!+${P}+g" .env
