@@ -17,8 +17,9 @@ jobs:
           ./build.sh
           ./download.sh
           ./start.sh
+          chmod 777 datasetes/*.DMP
       - uses: actions/upload-artifact@v3
-        with:
+        with:g
           name: datasets
           path: datasets/*.DMP
   release:
