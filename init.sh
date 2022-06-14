@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
-set -xo
+set -exo
 
 echo "Replacing .env.example with .env"
 cp .env.example .env

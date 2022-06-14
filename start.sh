@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-set -xo
+set -exo
+
 if [ -f .env ]; then
   export $(cat .env | sed 's/#.*//g' | xargs)
 fi
