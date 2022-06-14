@@ -3,6 +3,7 @@ generated/*.csv
 .env
 datasets/.ready
 datasets/.pythonready
+datasets/COVID_WEEKLY.DMP
 
 # Created by https://www.toptal.com/developers/gitignore/api/microsoftoffice,linux,macos,python,jupyternotebooks
 # Edit at https://www.toptal.com/developers/gitignore?templates=microsoftoffice,linux,macos,python,jupyternotebooks

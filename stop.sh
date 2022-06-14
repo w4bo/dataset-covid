@@ -1,5 +1,5 @@
 #!/bin/bash
 set -xo
-rm resources/.ready
-rm resources/.pythonready
+rm datasets/.ready
+rm datasets/.pythonready
 docker-compose down
