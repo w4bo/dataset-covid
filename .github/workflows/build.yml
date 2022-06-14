@@ -21,7 +21,9 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: datasets
-          path: datasets/*.DMP
+          path: |
+            datasets/*.DMP
+            datasets/*.dmp
   release:
     needs:
       - build
@@ -35,6 +37,7 @@ jobs:
           name: datasets
       - name: Release
         run: |
+          ls -las
           ls -las datasets
           npm install
           npx semantic-release
