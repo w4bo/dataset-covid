@@ -8,7 +8,7 @@ fi
 ./stop.sh
 docker-compose up --build -d --remove-orphans
 
-until [ -f resources/.ready ]
+until [ -f datasets/.ready ]
 do
      sleep 1
 done
@@ -21,4 +21,4 @@ for f in *.ipynb;
   filename="${f%.*}"
   ipython $filename.py
 
-touch resources/.pythonready
+touch datasets/.pythonready

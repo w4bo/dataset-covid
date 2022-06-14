@@ -13,8 +13,34 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install jupyter
+          chmod +x *.sh
           ./init.sh
           ./build.sh
           ./download.sh
           ./start.sh
           ./stop.sh
+  release:
+    needs:
+      - build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+      - uses: actions/setup-java@v3.2.0
+        with:
+          distribution: 'adopt'
+          java-version: '14'
+      - name: Deploy
+        run: |
+          cd intentional
+          ./gradlew shadowJar
+          cd ..
+          mkdir -p dist/
+          cp intentional/build/libs/* dist/
+      - name: Release
+        run: |
+          npm install
+          npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
