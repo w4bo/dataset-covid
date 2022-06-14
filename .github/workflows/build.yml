@@ -38,7 +38,6 @@ jobs:
       - name: Release
         run: |
           ls -las
-          ls -las datasets
           npm install
           npx semantic-release
         env:

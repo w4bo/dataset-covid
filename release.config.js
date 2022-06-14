@@ -9,7 +9,7 @@ config.plugins.push(
     }],
     ["@semantic-release/github", {
         "assets": [
-          {"path": "resources/*.dmp"}
+          {"path": "*.DMP"}
         ]
     }],
     "@semantic-release/git",
