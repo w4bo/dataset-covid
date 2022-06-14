@@ -13,6 +13,8 @@ do
      sleep 1
 done
 
+export LD_LIBRARY_PATH=${ORACLE_PATH}
+
 for f in *.ipynb
 do 
   echo "Processing $f file...";
