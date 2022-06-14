@@ -19,7 +19,7 @@ jobs:
           ./start.sh
           chmod 777 datasetes/*.DMP
       - uses: actions/upload-artifact@v3
-        with:g
+        with:
           name: datasets
           path: datasets/*.DMP
   release:
