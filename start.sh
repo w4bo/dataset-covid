@@ -13,12 +13,14 @@ do
      sleep 1
 done
 
-for f in *.ipynb; 
-  do echo "Processing $f file...";
+for f in *.ipynb
+do 
+  echo "Processing $f file...";
   jupyter nbconvert --execute --to notebook --inplace $f
   jupyter nbconvert --to script $f
   extension="${f##*.}"
   filename="${f%.*}"
   ipython $filename.py
+done
 
 touch datasets/.pythonready
