@@ -1,5 +1,5 @@
-set -e
-set -xo
+#!/bin/bash
+set -exo
 
 chmod -R 777 /data
 ls -las /data
