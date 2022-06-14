@@ -19,7 +19,7 @@ connstring = "oracle://{}:{}@{}:{}/{}".format(os.getenv('ORACLE_USER'), os.geten
 oracle_db = sa.create_engine(connstring)
 cx_Oracle.init_oracle_client(lib_dir=os.getenv('ORACLE_PATH'))
 engine = oracle_db.connect()
-df = pd.read_csv("datasets/dataset_weekly-20220614.csv", delimiter=",", nrows=1000)
+df = pd.read_csv("datasets/dataset_weekly-20220614.csv", delimiter=",") #, nrows=1000
 df = df[["country", "continent", "country_code", "population", "indicator", "weekly_count", "year_week"]]
 df
 
