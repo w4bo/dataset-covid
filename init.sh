@@ -24,4 +24,4 @@ else
 fi
 
 sed -i "s+\!HOME\!+${P}+g" .env
-echo "Done."
+cat .env
