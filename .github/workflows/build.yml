@@ -17,7 +17,6 @@ jobs:
           ./build.sh
           ./download.sh
           ./start.sh
-          ./stop.sh
   release:
     needs:
       - build
