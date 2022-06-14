@@ -13,4 +13,4 @@ do
      sleep 1
 done
 
-expdp covid_weekly/oracle@xe directory=oracle_dump dumpfile=covid_weekly.dmp SCHEMAS=covid_weekly
+expdp covid_weekly/oracle@xe directory=oracle_dump dumpfile=COVID_WEEKLY.DMP SCHEMAS=covid_weekly
