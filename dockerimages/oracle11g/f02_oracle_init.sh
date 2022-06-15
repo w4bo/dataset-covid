@@ -14,3 +14,5 @@ do
 done
 
 expdp covid_weekly/oracle@xe directory=oracle_dump dumpfile=COVID_WEEKLY.DMP SCHEMAS=covid_weekly
+
+touch /data/.datasetready

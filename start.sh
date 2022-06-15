@@ -29,9 +29,10 @@ java -cp libs/COOL-all.jar it.unibo.conversational.database.DBreader --dbms ${OR
 
 touch datasets/.pythonready
 
-until [ -f datasets/COVID_WEEKLY.DMP ]
+until [ -f datasets/.datasetready ]
 do
   sleep 1
 done
 
-ls -las datasets
+docker logs oracledb
+
