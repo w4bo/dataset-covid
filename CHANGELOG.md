@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/w4bo/covid-dataset/compare/1.0.0...1.0.1) (2022-06-15)
+
+
+### Bug Fixes
+
+* **covid_weekly:** extend the dataset with the meta-tables necessary for the conversational OLAP engine ([caba530](https://github.com/w4bo/covid-dataset/commit/caba530fcc1fd3ba27a48119e0432b0567937b13))
+
 ## 1.0.0 (2022-06-14)
 
 
