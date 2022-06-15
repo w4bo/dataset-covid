@@ -25,6 +25,8 @@ do
   ipython $filename.py
 done
 
+java -cp libs/COOL-all.jar it.unibo.conversational.database.DBreader --dbms ${ORACLE_DBMS} --user ${ORACLE_USER} --pwd ${ORACLE_PWD} --ip ${ORACLE_IP} --port ${ORACLE_PORT} --db ${ORACLE_DB} --ft ${ORACLE_FT}
+
 touch datasets/.pythonready
 
 until [ -f datasets/COVID_WEEKLY.DMP ]
