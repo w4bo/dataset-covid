@@ -10,7 +10,7 @@ docker-compose up --build -d --remove-orphans
 
 until [ -f datasets/.ready ]
 do
-     sleep 1
+  sleep 1
 done
 
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
