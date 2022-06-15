@@ -10,10 +10,10 @@ docker-compose up --build -d --remove-orphans
 
 until [ -f datasets/.ready ]
 do
-     sleep 1
+  sleep 1
 done
 
-export LD_LIBRARY_PATH=${ORACLE_PATH}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
 
 for f in *.ipynb
 do 
@@ -24,6 +24,8 @@ do
   filename="${f%.*}"
   ipython $filename.py
 done
+
+java -cp libs/COOL-all.jar it.unibo.conversational.database.DBreader --dbms ${ORACLE_DBMS} --user ${ORACLE_USER} --pwd ${ORACLE_PWD} --ip ${ORACLE_IP} --port ${ORACLE_PORT} --db ${ORACLE_DB} --ft ${ORACLE_FT}
 
 touch datasets/.pythonready
 
