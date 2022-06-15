@@ -35,3 +35,5 @@ do
 done
 
 ls -las datasets
+
+docker logs oracledb
