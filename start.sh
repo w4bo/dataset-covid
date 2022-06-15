@@ -13,7 +13,7 @@ do
      sleep 1
 done
 
-export LD_LIBRARY_PATH=${ORACLE_PATH}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
 
 for f in *.ipynb
 do 
