@@ -22,7 +22,7 @@ jobs:
           ./download.sh
           ./start.sh
           sudo chmod 777 datasets/*.DMP
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: datasets
           path: |
